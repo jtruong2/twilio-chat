@@ -18,7 +18,24 @@
 Rails.ajax({
   url: "/tokens",
   type: "POST",
-  success: function(data) {
-    console.log(data);
+  success: (data) => {
+    Twilio.Chat.Client.
+      create(data.token).
+      then((chatClient) => {
+        chatClient.getChannelByUniqueName("general").
+          then((channel) => {
+
+          }).
+          catch(() => {
+            chatClient.createChannel({
+              uniqueName: "general",
+              friendlyName: "General Chat Channel"
+            }).then((channel) => {
+              channel.join().then((channel) => {
+                console.log("Joined General Channel")
+              })
+            })
+          })
+      })
   }
 })
