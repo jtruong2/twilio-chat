@@ -1,24 +1,7 @@
-# README
+# Twilio Chat room
+A simple, public chatroom built using the Twilio gem and Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Followed a great tutorial outlined by Kevin Thompson at Twilio 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://www.twilio.com/blog/build-chat-ruby-on-rails-applications
