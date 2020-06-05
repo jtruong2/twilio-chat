@@ -35,6 +35,8 @@ class Chat {
     this.channel = channel
     this.joinChannel()
     this.addMessage({body: `Joined general channel as ${this.identity}`})
+    this.channel.on("messageAdded", message => this.addMessage(message))
+    this.setupForm()
   }
 
   setupClient(client) {
@@ -66,5 +68,16 @@ class Chat {
     html += message.body
     this.messages.push(html)
     this.renderMessages()
+  }
+
+  setupForm() {
+    const form = document.querySelector(".chat form")
+    const input = document.querySelector(".chat form input")
+    form.addEventListener("submit", e => {
+      e.preventDefault()
+      this.channel.sendMessage(input.value)
+      input.value = ""
+      return false
+    })
   }
 }
