@@ -51,6 +51,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bourbon'
   gem 'clearance'
+  gem 'twilio-ruby'
 end
 
 group :test do
